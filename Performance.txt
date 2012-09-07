@@ -1,0 +1,63 @@
+
+Benchmark (no flushing, no file rollover)
+-----------------------------
+target_record_count: 10000000
+actual_record_count: 10000000
+record_data_size: 500
+thread_count: 1
+time: 32373 ms
+records_per_sec: 308899.39
+
+Benchmark Summary (no flushing, no file rollover)
+-----------------------------
+target_record_count: 10000000
+actual_record_count: 10000000
+record_data_size: 500
+thread_count: 2
+time: 48186 ms
+records_per_sec: 207529.16
+
+Benchmark Summary (no flushing, 1 file rollover)
+-----------------------------
+target_record_count: 10000000
+actual_record_count: 10000000
+record_data_size: 500
+thread_count: 4
+time: 69348 ms
+records_per_sec: 144200.27
+
+Benchmark Summary (no flushing, 1 file rollover)
+-----------------------------
+target_record_count: 10000000
+actual_record_count: 10000000
+record_data_size: 500
+thread_count: 40
+time: 84157 ms
+records_per_sec: 118825.53
+
+Benchmark Summary
+-----------------------------
+target_record_count: 10000000
+actual_record_count: 10000000
+record_data_size: 500
+thread_count: 250
+time: 94220 ms
+records_per_sec: 106134.58
+
+Benchmark Summary
+-----------------------------
+target_record_count: 10000000
+actual_record_count: 10000000
+record_data_size: 500
+thread_count: 1000
+time: 93035 ms
+records_per_sec: 107486.43
+
+
+How Does Compress Effect Reading?
+
+166245999 byte file = 158.54 MiB
+
+4.419 seconds for uncompressed file
+4.279 seconds for gzip compressed file
+3.683 seconds for lzf compressed file 

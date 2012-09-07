@@ -1,0 +1,37 @@
+Mfizz
+Java framework for binary structured logs
+--------------------------------------------------------------------------------
+2.0.0 - 2012-09-06
+  * Fixed dependencies and build.
+
+1.4.0 - 2011-09-25
+  * Added "seek forward" feature to BinlogFileReader - allows simple skipping of
+    records in a binlog.  Useful for many purposes: e.g. resuming the processing
+    of a binlog where one needs to start in the middle of a binlog rather than
+    the beginning.
+  * Added "server-id" property to BinlogFileHeader to simply setting/getting of
+    this optional parameter -- which is now nearly a required parameter for many
+    applications that use this library.
+
+1.3.1 - 2011-09-05
+  * Faster performance with reading GZip compressed files by using a 1MB 
+    buffered inputstream.
+
+1.3.0 - 2011-08-23
+  * Added support for creating a BinlogFileReader from an InputStream.
+  * Added support for automatically detecting a compressed file by its filename
+    suffix and reading it. 
+
+1.2.0 - 2011-08-18
+  * Added new FileRotatePeriods of TEN_MINUTES, QUARTER_HOUR, and HALF_HOUR.
+
+1.1.0 - 2009-08-18
+  * Added support for an "active" binlog file that contains the filename of the
+    active binlog file.  If enabled, the file is stored in the same directory
+    as the binlogs with the format [name].active (enabled by default).
+  * Added support for a maxClosedBinlogSize binlogger configuration setting to
+    only keep the last X number of closed binlogs in-memory.  By default, this
+    is set to 10.
+
+1.0.0 - 2008-08-14
+  * Initial Release

@@ -1,0 +1,27 @@
+package binlog;
+
+option java_package = "com.mfizz.binlog.protobuf";
+option java_outer_classname = "BinlogProtos";
+
+message KeyValue {
+  optional string key = 1;
+  optional string value = 2;
+}
+
+message BinlogFileHeader {
+  optional fixed64 createDateTime = 1;          // date and time binlog file created
+  optional string name = 2;                     // name of binlog (usually matches file name)
+  optional string contentType = 3;              // type of binlog (must match factory type)
+  repeated KeyValue optionalParameter = 4;      // optional headers to add by key/value pairs
+  optional int32 recordLengthByteLength = 5;    // number of bytes to use for record_length
+}
+
+message BinlogRecordHeader {
+  optional int32 id = 1;                        // id (seq num) of record in binlog
+  optional fixed64 createDateTime = 2;          // date and time record created
+  optional int32 userDefinedType = 3;           // user defined type (type of record e.g. INSERT vs. UPDATE)
+  repeated KeyValue optionalParameter = 4;      // optional headers to add by key/value pairs
+  optional int32 eventId = 5;                   // id of event (BINLOGGER_HEARTBEAT)
+  optional string eventName = 6;                // name of event
+  optional string eventInfo = 7;                // info of event
+}
