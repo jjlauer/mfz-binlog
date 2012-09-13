@@ -20,7 +20,7 @@ package com.mfizz.binlog.type;
  * #L%
  */
 
-import com.cloudhopper.commons.util.DateTimeUtil;
+import com.mfizz.util.DateTimeUtil;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;

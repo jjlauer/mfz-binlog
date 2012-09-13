@@ -20,9 +20,9 @@ package com.mfizz.binlog;
  * #L%
  */
 
-import com.cloudhopper.commons.util.HexUtil;
 import com.mfizz.binlog.impl.BinlogRecordHeaderImpl;
 import com.mfizz.binlog.type.EventType;
+import com.mfizz.util.HexUtil;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;

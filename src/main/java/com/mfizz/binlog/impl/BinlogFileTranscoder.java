@@ -20,7 +20,6 @@ package com.mfizz.binlog.impl;
  * #L%
  */
 
-import com.cloudhopper.commons.util.HexUtil;
 import com.mfizz.binlog.BinlogConstants;
 import com.mfizz.binlog.BinlogException;
 import com.mfizz.binlog.BinlogFileDeclaration;
@@ -28,6 +27,7 @@ import com.mfizz.binlog.BinlogFileHeader;
 import com.mfizz.binlog.BinlogPropertyException;
 import com.mfizz.binlog.BinlogRecordHeader;
 import com.mfizz.binlog.type.TranscoderType;
+import com.mfizz.util.HexUtil;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Arrays;

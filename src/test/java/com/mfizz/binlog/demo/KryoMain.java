@@ -20,8 +20,8 @@ package com.mfizz.binlog.demo;
  * #L%
  */
 
-import com.cloudhopper.commons.util.HexUtil;
 import com.esotericsoftware.kryo.Kryo;
+import com.mfizz.util.HexUtil;
 import java.nio.ByteBuffer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

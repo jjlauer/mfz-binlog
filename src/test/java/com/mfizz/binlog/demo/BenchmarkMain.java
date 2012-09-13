@@ -20,7 +20,6 @@ package com.mfizz.binlog.demo;
  * #L%
  */
 
-import com.cloudhopper.commons.util.DecimalUtil;
 import com.mfizz.binlog.BaseBinlogFile;
 import com.mfizz.binlog.Binlogger;
 import com.mfizz.binlog.BinloggerConfiguration;
@@ -127,12 +126,12 @@ public final class BenchmarkMain {
     
     static public void logStats(Configuration config, long startTime, long stopTime, int actualRecordCount, int deltaRecordCount) {
         double percentDone = ((double)actualRecordCount/(double)config.targetRecordCount)*100;
-        logger.info("record_count: {} out of {} ({}% done)", new Object[] { actualRecordCount, config.targetRecordCount, DecimalUtil.toString(percentDone, 2) });
+        logger.info("record_count: {} out of {} ({}% done)", new Object[] { actualRecordCount, config.targetRecordCount, percentDone });
         logger.info("record_data_size: {}", config.recordDataSize);
         logger.info("thread_count: {}", config.threadCount);
         logger.info("time: {} ms", (stopTime - startTime));
         double recordsPerSec = ((double)deltaRecordCount)/((double)(stopTime-startTime)/(double)1000);
-        logger.info("records_per_sec: {}", DecimalUtil.toString(recordsPerSec, 2));
+        logger.info("records_per_sec: {}", recordsPerSec);
     }
     
     static public class LogStatsThread extends Thread {

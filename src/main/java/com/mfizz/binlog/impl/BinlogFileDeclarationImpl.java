@@ -20,7 +20,7 @@ package com.mfizz.binlog.impl;
  * #L%
  */
 
-import com.cloudhopper.commons.util.HexUtil;
+import com.mfizz.util.HexUtil;
 import com.mfizz.binlog.WritableBinlogFileDeclaration;
 import com.mfizz.binlog.type.TranscoderType;
 

@@ -20,11 +20,11 @@ package com.mfizz.binlog;
  * #L%
  */
 
-import com.cloudhopper.commons.util.CompressionUtil;
-import com.cloudhopper.commons.util.HexUtil;
+import com.mfizz.util.HexUtil;
 import com.mfizz.binlog.impl.BinlogRecordHeaderImpl;
 import com.mfizz.binlog.type.EventType;
 import com.mfizz.binlog.type.TranscoderType;
+import com.mfizz.util.CompressUtil;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -663,7 +663,7 @@ public class BinlogFileReaderTest {
         hex += "67" + "100100000000";
         File f = FileUtil.createTempFile(HexUtil.toByteArray(hex));
         // compress it!
-        File cf = CompressionUtil.compress(f, "gzip", true);
+        File cf = CompressUtil.compress(f, "gzip", true);
         logger.debug("compressed file: " + cf.getName());
         FileInputStream fis = new FileInputStream(cf);
         GZIPInputStream gis = new GZIPInputStream(fis);
@@ -684,7 +684,7 @@ public class BinlogFileReaderTest {
         String hex = "4d46495a5a2e434f4d2d42494e4c4f47100100000001";
         File f = FileUtil.createTempFile(HexUtil.toByteArray(hex));
         // compress it!
-        File cf = CompressionUtil.compress(f, "gzip", true);
+        File cf = CompressUtil.compress(f, "gzip", true);
         logger.debug("compressed file: " + cf.getName());
         FileInputStream fis = new FileInputStream(cf);
         GZIPInputStream gis = new GZIPInputStream(fis);
@@ -705,7 +705,7 @@ public class BinlogFileReaderTest {
         String hex = "4d46495a5a2e434f4d2d42494e4c4f47100100000029090016134B300100001209746573742D6E616D651A11746573742D636F6E74656E742D747970652802";
         File f = FileUtil.createTempFile(HexUtil.toByteArray(hex)); 
         // compress it!
-        File cf = CompressionUtil.compress(f, "gzip", true);
+        File cf = CompressUtil.compress(f, "gzip", true);
         logger.debug("compressed file: " + cf.getName());
         FileInputStream fis = new FileInputStream(cf);
         GZIPInputStream gis = new GZIPInputStream(fis);
@@ -740,7 +740,7 @@ public class BinlogFileReaderTest {
         String hex = "4d46495a5a2e434f4d2d42494e4c4f47100100000029090016134B300100001209746573742D6E616D651A11746573742D636F6E74656E742D747970652802";
         File f = FileUtil.createTempFile(HexUtil.toByteArray(hex)); 
         // compress it!
-        File cf = CompressionUtil.compress(f, "gzip", true);
+        File cf = CompressUtil.compress(f, "gzip", true);
         logger.debug("compressed file: " + cf.getName());
         FileInputStream fis = new FileInputStream(cf);
         GZIPInputStream gis = new GZIPInputStream(fis);
@@ -776,7 +776,7 @@ public class BinlogFileReaderTest {
         String hex = "4d46495a5a2e434f4d2d42494e4c4f47100100000029090016134B300100001209746573742D6E616D651A11746573742D636F6E74656E742D747970652802";
         File f = FileUtil.createTempFile(HexUtil.toByteArray(hex)); 
         // compress it!
-        File cf = CompressionUtil.compress(f, "gzip", true);
+        File cf = CompressUtil.compress(f, "gzip", true);
         logger.debug("compressed file: " + cf.getName());
         FileInputStream fis = new FileInputStream(cf);
         GZIPInputStream gis = new GZIPInputStream(fis);
@@ -857,7 +857,7 @@ public class BinlogFileReaderTest {
         File f = FileUtil.createTempFile(HexUtil.toByteArray(hex)); 
         
         // compress it!
-        File cf = CompressionUtil.compress(f, "gzip", true);
+        File cf = CompressUtil.compress(f, "gzip", true);
         logger.debug("compressed file: " + cf.getName());
         FileInputStream fis = new FileInputStream(cf);
         GZIPInputStream gis = new GZIPInputStream(fis);

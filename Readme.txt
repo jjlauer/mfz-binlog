@@ -32,7 +32,7 @@ In Linux, to HexDump a file on command line:
 
 To create protobuf:
 
-  > protoc --java_out=src/main/java/ idl/binlog.proto
+  > protoc --java_out=src/main/java/ src/main/proto/binlog.proto
 
 
 utf8_short_string (1 byte length, then string)

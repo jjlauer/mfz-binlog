@@ -20,7 +20,6 @@ package com.mfizz.binlog.impl;
  * #L%
  */
 
-import com.cloudhopper.commons.util.StringUtil;
 import com.mfizz.binlog.BinlogConstants;
 import com.mfizz.binlog.BinlogPropertyException;
 import com.mfizz.binlog.WritableBinlogFileHeader;

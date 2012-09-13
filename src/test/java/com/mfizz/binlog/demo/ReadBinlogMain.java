@@ -20,7 +20,6 @@ package com.mfizz.binlog.demo;
  * #L%
  */
 
-import com.cloudhopper.commons.util.DecimalUtil;
 import com.mfizz.binlog.BinlogException;
 import com.mfizz.binlog.BinlogFactory;
 import com.mfizz.binlog.BinlogFile;
@@ -159,14 +158,14 @@ public final class ReadBinlogMain {
         logger.info("total_size: {} bytes", binlog.getSize());
         double recordHeaderSizePercentage = (double)binlog.getRecordHeaderSize()/(double)binlog.getSize() * 100;
         double recordDataSizePercentage = (double)binlog.getRecordDataSize()/(double)binlog.getSize() * 100;
-        logger.info("total_record_header_size: {} bytes ({}% of size)", binlog.getRecordHeaderSize(), DecimalUtil.toString(recordHeaderSizePercentage, 2));
-        logger.info("total_record_data_size: {} bytes ({}% of size)", binlog.getRecordDataSize(), DecimalUtil.toString(recordDataSizePercentage, 2));
+        logger.info("total_record_header_size: {} bytes ({}% of size)", binlog.getRecordHeaderSize(), recordHeaderSizePercentage);
+        logger.info("total_record_data_size: {} bytes ({}% of size)", binlog.getRecordDataSize(), recordDataSizePercentage);
         
         if (binlog.getRecordCount() > 0) {
             double avgRecordHeaderSize = (double)binlog.getRecordHeaderSize()/(double)binlog.getRecordCount();
             double avgRecordDataSize = (double)binlog.getRecordDataSize()/(double)binlog.getRecordCount();
-            logger.info("avg_record_header_size: {} bytes", DecimalUtil.toString(avgRecordHeaderSize, 1));
-            logger.info("avg_record_data_size: {} bytes", DecimalUtil.toString(avgRecordDataSize, 1));
+            logger.info("avg_record_header_size: {} bytes", avgRecordHeaderSize);
+            logger.info("avg_record_data_size: {} bytes", avgRecordDataSize);
         }
         
     }

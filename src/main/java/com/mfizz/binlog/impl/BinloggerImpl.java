@@ -20,10 +20,10 @@ package com.mfizz.binlog.impl;
  * #L%
  */
 
-import com.cloudhopper.commons.util.NamingThreadFactory;
 import com.mfizz.binlog.*;
 import com.mfizz.binlog.type.DateTimePeriod;
 import com.mfizz.binlog.type.EventType;
+import com.mfizz.util.NamingThreadFactory;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collection;

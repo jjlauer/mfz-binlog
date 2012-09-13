@@ -20,8 +20,8 @@ package com.mfizz.binlog;
  * #L%
  */
 
-import com.cloudhopper.commons.util.HexUtil;
 import com.mfizz.binlog.impl.BinlogRecordHeaderImpl;
+import com.mfizz.util.HexUtil;
 import java.io.File;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;

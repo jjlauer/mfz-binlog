@@ -1,6 +1,9 @@
 Mfizz
 Java framework for binary structured logs
 --------------------------------------------------------------------------------
+2.0.1 - 2012-09-13
+  * Fixed more dependencies.
+
 2.0.0 - 2012-09-06
   * Fixed dependencies and build.
 
