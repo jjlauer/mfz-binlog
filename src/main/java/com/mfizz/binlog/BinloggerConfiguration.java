@@ -38,6 +38,8 @@ public class BinloggerConfiguration {
     private boolean activeFileEnabled;
     // how many "closed" binlogs to maintain as a history in memory
     private int maxClosedBinlogSize;
+    // disable the shutdown hook
+    private boolean shutdownHookDisabled;
     
     public BinloggerConfiguration() {
         this.name = "default";
@@ -45,6 +47,7 @@ public class BinloggerConfiguration {
         this.setFileNameAsHeaderNameEnabled = true;
         this.activeFileEnabled = true;
         this.maxClosedBinlogSize = 10;
+        this.shutdownHookDisabled = false;
     }
 
     public String getName() {
@@ -104,5 +107,13 @@ public class BinloggerConfiguration {
             throw new IllegalArgumentException("maxClosedBinlogSize must be >= 1");
         }
         this.maxClosedBinlogSize = maxClosedBinlogSize;
+    }
+    
+    public boolean isShutdownHookDisabled() {
+        return this.shutdownHookDisabled;
+    }
+
+    public void setShutdownHookDisabled(boolean value) {
+        this.shutdownHookDisabled = value;
     }
 }

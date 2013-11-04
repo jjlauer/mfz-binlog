@@ -1,6 +1,12 @@
 Mfizz
 Java framework for binary structured logs
 --------------------------------------------------------------------------------
+2.1.0 - 2013-11-04
+  * Added configuration of "disableShutdownHook" to prevent framework from
+    auto registering a shutdown hook. If this feature is enabled, the application
+    MUST make sure it tries to flush the active binlog at app shutdown in its
+    own shutdown hook.
+
 2.0.1 - 2012-09-13
   * Fixed more dependencies.
 

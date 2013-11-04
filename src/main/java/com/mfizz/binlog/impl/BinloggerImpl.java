@@ -91,21 +91,25 @@ public class BinloggerImpl implements Binlogger, BinlogActivator {
         //
         // important, add a shutdown hook to make sure flush() is called on the the active binlog
         //
-        Runtime.getRuntime().addShutdownHook(new Thread() {
-            @Override
-            public void run() {
-                BinlogFileWriter binlog = activeBinlog.get();
-                if (binlog != null) {
-                    logger.info("ShutdownHook flushing and closing binlog [{}]", binlog.getFile().getAbsolutePath());
-                    try {
-                        safelyCloseBinlog(binlog);
-                    } catch (Throwable t) {
-                        logger.error("Unable to properly flush and close binlog", t);
+        if (configuration.isShutdownHookDisabled()) {
+            logger.warn("Binlog shutdown hook disabled; application must close explicitly");
+        } else {
+            Runtime.getRuntime().addShutdownHook(new Thread() {
+                @Override
+                public void run() {
+                    BinlogFileWriter binlog = activeBinlog.get();
+                    if (binlog != null) {
+                        logger.info("ShutdownHook flushing and closing binlog [{}]", binlog.getFile().getAbsolutePath());
+                        try {
+                            safelyCloseBinlog(binlog);
+                        } catch (Throwable t) {
+                            logger.error("Unable to properly flush and close binlog", t);
+                        }
                     }
                 }
-            }
-        });
-        logger.info("ShutdownHook configured for binlogger [{}] to protect binlogs from corruption at JVM shutdown", configuration.getName());
+            });
+            logger.info("ShutdownHook configured for binlogger [{}] to protect binlogs from corruption at JVM shutdown", configuration.getName());
+        }
     }
     
     public BinloggerActiveFileWriter getActiveFileWriter() {
